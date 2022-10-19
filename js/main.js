@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const url = `http://taskt-english-tochka`;
+
   const modal = document.querySelector('#modal'),
     modal_close = document.querySelector('#modal_close'),
     modal_open = document.querySelector('#modal_open'),
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //START---------- Получние продуктов
   function get_products() {
     products.innerHTML = '';
-    const res = fetch('http://test/php/get_products.php');
+    const res = fetch(`${url}/php/get_products.php`);
     res
       .then((res) => res.json())
       .then((res) => {
@@ -63,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   fd.append('id_user', user[0].id);
                   fd.append('id_product', id_product);
                   fd.append('price', price);
-                  const res = fetch('http://test/php/buy_product.php', {
+                  const res = fetch(`${url}/php/buy_product.php`, {
                     method: 'POST',
                     body: fd,
                   });
@@ -111,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     balance_user = 0;
 
     fd.append('login', input_search.value);
-    const res = fetch('http://test/php/get_user.php', {
+    const res = fetch(`${url}/php/get_user.php`, {
       method: 'POST',
       body: fd,
     });
