@@ -1,4 +1,4 @@
-# Taskt-English-Tochka
+# Task-English-Tochka
 
 Этап первый:
 Сверстать сайт по макету.
