@@ -122,7 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((res) => {
         user = res;
         if (res.length) {
-          res[1].map((item) => {
+          let tmpArray = [];
+
+          function itemCheck(item) {
+            if (tmpArray.indexOf(item.action) === -1) {
+              tmpArray.push(item.action);
+              return true;
+            }
+            return false;
+          }
+          const uniq = res[1].filter((item) => itemCheck(item));
+          uniq.map((item) => {
             balance_user += Number(item.price);
           });
           balance.innerHTML = balance_user;
