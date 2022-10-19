@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const url = `http://taskt-english-tochka`;
+  const url = `http://task-english-tochka`;
 
   const modal = document.querySelector('#modal'),
     modal_close = document.querySelector('#modal_close'),
